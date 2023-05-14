@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+}
+
+body{
+    width: 100%;
+    background-color: skyblue;
+   
+ 
+}
+.form .btn{
+    padding: 0.5rem;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+ 
+    
+  
+}
+
+.container{
+    width: 30rem;
+    margin: 2rem auto;
+    border:1px solid white;
+    height:470px;
+    margin-top:80px;
+    background-color: whitesmoke;
+}
+
+.container .title{
+    text-align: center;
+    padding: 5px;
+   
+}
+
+.container .form{
+   
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+  
+   
+}
+
+.form input{
+    flex: 1;
+    padding: 0.7rem;
+  
+  
+}
+.btn{
+    margin-right:34px;
+}
+
+
+.lists .todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    margin-top: 0.5rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    margin-right:18px;
+   
+}
+
+
+
+
+.text{
+   
+    font-size:12px;
+    width: 100%;
+   
+}
+
+
+
+.removeAll{
+    text-align:center;
+    padding-top:1rem;
+   
+}
+.removeAll_btn{
+
+
+padding:9px;
+background-color:blueviolet;
+color:#fff;
+border:none;
+cursor: pointer;
+width:90px;
+
+margin-top: 4vh;
+border-radius: 4px;
+margin-left:41vh;
+
+}
+
+ h1{
+     margin-right:45vh;
+     margin-bottom:5vh;
+     margin-top:4vh;
+ }
+ .btn{
+     margin-right:20px;
+     
+ }
+ .spann{
+     margin-right:60px;
+ }
+   
+  
