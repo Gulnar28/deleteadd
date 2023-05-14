@@ -1,9 +1,9 @@
-// grab all elements 
+
 const form = document.querySelector("[data-form]");
 const lists = document.querySelector("[data-lists]");
 const input = document.querySelector("[data-input]");
-const removeAllBtn=document.querySelector(".removeAll_btn")
-//local Storage
+const removeAllBtn=document.querySelector(".removeAll_btn");
+
 class Storage {
     static addTodStorage(todoArr){
         let storage = localStorage.setItem("todo", JSON.stringify(todoArr));
@@ -17,10 +17,9 @@ class Storage {
     }
 }
 
-// empty array 
+
 let todoArr = Storage.getStorage();
 
-// form part 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let id = Math.random()
@@ -28,19 +27,16 @@ form.addEventListener("submit", (e) => {
     todoArr = [...todoArr, todo];
     UI.displayData();
     UI.clearInput();
-    //add to storage
     Storage.addTodStorage(todoArr);
 });
 
-// make object instance 
+
 class Todo {
     constructor(id, todo){
         this.id = id;
         this.todo = todo;
     }
 }
-
-// display the todo in the DOM;
 class UI{
     static displayData(){
         let displayData = todoArr.map((item) => {
@@ -62,7 +58,6 @@ class UI{
                 e.target.parentElement.remove();
             }
             let btnId = e.target.dataset.id;
-            //remove from array.
             UI.removeArrayTodo(btnId);
         });
     }
@@ -70,8 +65,6 @@ class UI{
         todoArr = todoArr.filter((item) => item.id !== +id);
         Storage.addTodStorage(todoArr);
     }
-
-
 static removeAll(){
     removeAllBtn.addEventListener("click",()=>{
 todoArr.length=0;
@@ -82,20 +75,8 @@ UI.displayData();
 }
 }
 
-
-    
-    
-
-
-
-
-
-
-
-//once the browser is loaded
 window.addEventListener("DOMContentLoaded", () => {
     UI.displayData();
-    //remove from the dom
     UI.removeTodo();
     UI.removeAll();
 });
