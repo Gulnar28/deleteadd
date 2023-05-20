@@ -3,6 +3,7 @@ const form = document.querySelector("[data-form]");
 const lists = document.querySelector("[data-lists]");
 const input = document.querySelector("[data-input]");
 const removeAllBtn=document.querySelector(".removeAll_btn");
+const pendingNumber=document.querySelector(".pendingNumber");
 
 class Storage {
     static addTodStorage(todoArr){
@@ -27,7 +28,9 @@ form.addEventListener("submit", (e) => {
     todoArr = [...todoArr, todo];
     UI.displayData();
     UI.clearInput();
+    pendingNumber.textContent= todoArr.length;
     Storage.addTodStorage(todoArr);
+  
 });
 
 
@@ -57,6 +60,7 @@ class UI{
             if(e.target.classList.contains("remove")){
                 e.target.parentElement.remove();
             }
+          
             let btnId = e.target.dataset.id;
             UI.removeArrayTodo(btnId);
         });
@@ -64,10 +68,13 @@ class UI{
     static removeArrayTodo(id){
         todoArr = todoArr.filter((item) => item.id !== +id);
         Storage.addTodStorage(todoArr);
+        pendingNumber.textContent= todoArr.length;
     }
+   
 static removeAll(){
     removeAllBtn.addEventListener("click",()=>{
 todoArr.length=0;
+pendingNumber.textContent= todoArr.length;
 localStorage.clear();
 UI.displayData();
     
@@ -80,28 +87,6 @@ window.addEventListener("DOMContentLoaded", () => {
     UI.removeTodo();
     UI.removeAll();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -8,7 +8,7 @@
    <div class="container">
         <h1 class="title">Todo App</h1>
         <form class="form" data-form>
-            <input type="text" placeholder="Add your new." data-input>
+            <input type="text" placeholder="Add your new todo" data-input>
             <button class="btn">+</button>
         </form>
         <div class="lists" data-lists>
@@ -18,10 +18,13 @@
 
            </ul>
                 <p>count</p>
-                <span>🗑️</span>
+                <button><i class=fas fa-plus"></i></button>
             </div> -->
         </div>
-        <div class="removeAll_btn">RemoveAll</div>
+        <div class="footer">
+        <span>You have <span class="pendingNumber"></span>  pending tasks</span>
+        <div class="removeAll_btn">Remove All</div>
+    </div>
     </div>
 </body>
 </html>
@@ -36,3 +39,4 @@
     <script src="./index.js"></script>
 </body>
 </html>
+
